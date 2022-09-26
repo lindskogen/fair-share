@@ -1,34 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+
+const formatter = new Intl.NumberFormat(undefined, { currency: "SEK", style: "currency" });
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [p1, setP1] = useState(1);
+  const [p2, setP2] = useState(1);
+  const [cost, setCost] = useState(100);
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div hidden>
+        <label>
+            How much to you make?<br/>
+          <input
+            type={"number"}
+              value={p1}
+            onChange={(e) => setP1(e.currentTarget.valueAsNumber)}
+          />
+        </label>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+        <div style={{ padding: 10 }}></div>
+
+      <div hidden>
+        <label>
+          How much does your partner make?<br/>
+          <input
+            type={"number"}
+              value={p2}
+            onChange={(e) => setP2(e.currentTarget.valueAsNumber)}
+          />
+        </label>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+        <div style={{ padding: 10 }}></div>
+
+        <div>
+            <label>
+                What is the cost of the thing?<br/>
+                <input
+                    type={"number"}
+                    value={cost}
+                    onChange={(e) => setCost(e.currentTarget.valueAsNumber)}
+                />
+            </label>
+        </div>
+
+        <div style={{ padding: 10 }}></div>
+
+    <div>You will pay: {formatter.format(p1/(p1 + p2) * cost)}</div>
+        <div>Your partner will pay: {formatter.format(p2/(p1 + p2) * cost)}</div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
