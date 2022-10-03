@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <div hidden>
         <label>
-            How much to you make?<br/>
+            How much do you make?<br/>
           <input
             type={"number"}
               value={p1}
