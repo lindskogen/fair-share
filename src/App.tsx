@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <div hidden>
+      <div>
         <label>
             How much do you make?<br/>
           <input
@@ -23,7 +23,7 @@ function App() {
 
         <div style={{ padding: 10 }}></div>
 
-      <div hidden>
+      <div>
         <label>
           How much does your partner make?<br/>
           <input
