@@ -1,0 +1,19 @@
+name: "Deploy"
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'pnpm'
+      - run: pnpm i
+      - run: pnpm build
+      - uses: actions/upload-pages-artifact@v1.0.5
+        with: 
+          path: 'dist'
+      - uses: actions/deploy-pages@v1.2.3
