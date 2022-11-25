@@ -10,9 +10,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: 'pnpm'
-      - run: pnpm i
-      - run: pnpm build
+          cache: 'yarn'
+      - run: yarn --pure-lockfile
+      - run: yarn build
       - uses: actions/upload-pages-artifact@v1.0.5
         with: 
           path: 'dist'
