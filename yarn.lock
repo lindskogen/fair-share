@@ -599,6 +599,11 @@ sade@^1.7.4:
   dependencies:
     mri "^1.1.0"
 
+safe-expression@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/safe-expression/-/safe-expression-1.0.2.tgz#7313b3372c59b41c9509d7741b858c64acba7156"
+  integrity sha512-VYRputGzpdrGz9OPuwJuNIibEW4xrT+CvJCRNJh/2cCP/Gwx24d6gnTi0wj/pTGGTveOjQhuem7flDj69/Wryg==
+
 sander@^0.5.0:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/sander/-/sander-0.5.1.tgz#741e245e231f07cafb6fdf0f133adfa216a502ad"
